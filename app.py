@@ -310,14 +310,17 @@ def main():
 
     selectservices = """              	
                             <p style="background-color:#cf005d;color:white;font-size:15px;padding:20px; text-align:justify;font-weight:bold;">
-                            1. &nbsp Select or upload dataset ( CSV Format) of your choice.
+                            1. &nbsp Select or upload dataset ( CSV (EXCEL) Format) of your choice.
                             <br>2. &nbsp Choose a column ( column should contain only 2 unique values ) from your dataset.
                             <br>3. &nbsp Then, choose the corresponding classifier from side-menu.
                             <br>4. &nbsp Select Hyperparameters of the Classifiaction model. 
                             <br>5. &nbsp Train the model , by selecting the checkbox. 
                             <br>6. &nbsp Observe the results of ACCURACY,  PRECISION & RECALL. 
                             <br>7. &nbsp Select the metrics you want to get from the trained and tested Classifier model.
-                            <br>8. &nbsp click the checkbox after to see the testing data of model and its coressponding prediction.  
+                            <br>8. &nbsp click the checkbox after to see the testing data of model and its coressponding prediction.
+                            <br><br>
+                            NOTE : If your dataset contains more than 2000 rows than select Logistic OR Random Forest Classifier
+                            as SVM are more suitable for samller Datasets.
 
                             </p> 
                     	    """
@@ -334,7 +337,7 @@ def main():
     st.header("Binary Classifiaction Model Training / Testing with Dataset : (PRACTICAL APPROACH)")
     st.subheader("UPLOAD THE DATASET .")
 
-    data = st.file_uploader("Upload a Dataset in [ CSV ] format only.", type=["csv"])
+    data = st.file_uploader("Upload a Dataset in [ CSV (EXCEL) ] format only.", type=["csv"])
 
 #-------data fetching from csv-----
 
@@ -439,6 +442,8 @@ def main():
     # ----metrics plotting-----
 
     def plot_metrics(metrics_list):
+        st.warning("If the model metrics are not loaded , do not refresh website. \n" 
+                   "Simply Deselect the metrics and click the checkbox again.")
 
         if 'Confusion Matrix' in metrics_list:
             st.subheader("Confusion Matrix Plotting : ")
@@ -575,7 +580,7 @@ def main():
                         metrics = ["Confusion Matrix", "ROC Curve", "Precision-Recall Curve"]
                         metrics_list = st.multiselect(
                             "Select which type of metrics you want to plot for model Training Phase.", metrics)
-                        if st.button("Create Metrics plots :"):
+                        if st.checkbox("Create Metrics plots :"):
                             plot_metrics(metrics_list)
 
                         st.markdown("")
@@ -666,7 +671,7 @@ def main():
                         metrics = ["Confusion Matrix", "ROC Curve", "Precision-Recall Curve"]
                         metrics_list = st.multiselect(
                             "Select which type of metrics you want to plot for model Training Phase.", metrics)
-                        if st.button("Create Metrics plots :"):
+                        if st.checkbox("Create Metrics plots :"):
                             plot_metrics(metrics_list)
 
                         st.markdown("")
@@ -755,7 +760,7 @@ def main():
                         metrics = ["Confusion Matrix", "ROC Curve", "Precision-Recall Curve"]
                         metrics_list = st.multiselect(
                             "Select which type of metrics you want to plot for model Training Phase.", metrics)
-                        if st.button("Create Metrics plots :"):
+                        if st.checkbox("Create Metrics plots :"):
                             plot_metrics(metrics_list)
 
                         st.markdown("")
