@@ -1,6 +1,6 @@
 # TheBinaryClassifier
 
-## TheBinaryClassifier is Web Application Made with the help of Python and Streamlit.
+## TheBinaryClassifier is an AutoML Web Application Made with the help of Python and Streamlit.
 
 ### The Binary Classifier ML app allows you to Train and Test classification machine learning models through your own dataset.
 
