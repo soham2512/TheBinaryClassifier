@@ -15,7 +15,7 @@ from PIL import Image
 
 def main():
     html_head = """
-        	<div style="background-color:#5752ff;">
+        	<div style="background-color:#de4635;">
         	<p style="color:white;font-size:50px;padding:20px;padding-bottom:0px;font-weight:bold">
         	 THE BINARY CLASSIFIER 
         	</p>
