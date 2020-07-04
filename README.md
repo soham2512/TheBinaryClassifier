@@ -6,4 +6,4 @@
 
 ### This Web-app also includes tutorials for the ML Classifier models used by you, so it becomes easy for an learning developer to get the knowledge of BINARY CLASSIFICATION through ML.
 
-### This Web Application is Live on - http://binary-ml-classifier.herokuapp.com/
+### This Web Application is Live on - https://binary-ml-classifier.herokuapp.com/
